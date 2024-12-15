@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Ing. Tomas Vlachopulos</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #000;
+            background-color: #fff;
+            width: 21cm;
+            min-height: 29.7cm;
+            margin: 2cm auto;
+            border: 1px solid #000;
+            padding: 2cm;
+            box-sizing: border-box;
+            position: relative;
+        }
+        .centered-content {
+            text-align: center;
+            margin-bottom: 2cm;
+        }
+    </style>
+</head>
+<body>
+    <div class="centered-content">
+        <h1>Ing. Tomas Vlachopulos</h1>
+        <p>Supportive data analyst inside international team delivering impactful solutions for data warehousing.</p>
+        <p>Prague 4 | <a href="tel:+420736707496">+420 736707496</a> | <a href="mailto:tom1en@seznam.cz">tom1en@seznam.cz</a> | <a href="https://www.linkedin.com/in/tomas-vlachopulos/">LinkedIn Profile</a></p>
+    </div>
+
+    <h2>Education:</h2>
+    <ul>
+        <li>VSB-Technical University Ostrava (2013-2019) - Master of material engineering</li>
+        <li>Shenyang Aerospace University China (2018-2019) - Aeronautical engineering</li>
+        <li>Dongguk University Korea (2016-2017) - Material science and engineering</li>
+    </ul>
+    
+    <h2 id="work-experience">Work Experience:</h2>
+    <div id="work-experience-content"></div>
+
+    <h2 id="certifications">Certifications:</h2>
+    <div id="certifications-content"></div>
+
+    <h2 id="skills">Skills:</h2>
+    <div id="skills-content"></div>
+
+    <h2 id="languages">Languages:</h2>
+    <div id="languages-content"></div>
+
+    <script>
+        fetch('C:\Users\tom1e\Downloads\Job_Hunting\Job_dataset_Siemens.json')
+            .then(response => response.json())
+            .then(data => {
+                // Work Experience
+                const workExperience = document.getElementById('work-experience-content');
+                data['Work Experience'].forEach(job => {
+                    const jobDiv = document.createElement('div');
+                    jobDiv.innerHTML = `
+                        <h3>${job.Company}</h3>
+                        <p>${job.Position}</p>
+                        <p>${job.Duration}</p>
+                        <ul>
+                            ${job.Responsibilities.map(res => `<li>${res}</li>`).join('')}
+                        </ul>
+                    `;
+                    workExperience.appendChild(jobDiv);
+                });
+
+                // Certifications
+                const certifications = document.getElementById('certifications-content');
+                const certList = document.createElement('ul');
+                data.Certifications.forEach(cert => {
+                    const certItem = document.createElement('li');
+                    certItem.textContent = cert;
+                    certList.appendChild(certItem);
+                });
+                certifications.appendChild(certList);
+
+                // Skills
+                const skills = document.getElementById('skills-content');
+                const softwareSkills = document.createElement('div');
+                softwareSkills.innerHTML = `
+                    <h3>Software Skills:</h3>
+                    <ul>
+                        ${data.Skills['Software Skills'].map(skill => `<li>${skill}</li>`).join('')}
+                    </ul>
+                `;
+                const softSkills = document.createElement('div');
+                softSkills.innerHTML = `
+                    <h3>Soft Skills:</h3>
+                    <ul>
+                        ${data.Skills['Soft Skills'].map(skill => `<li>${skill}</li>`).join('')}
+                    </ul>
+                `;
+                skills.appendChild(softwareSkills);
+                skills.appendChild(softSkills);
+
+                // Languages
+                const languages = document.getElementById('languages-content');
+                const langList = document.createElement('ul');
+                data.Languages.forEach(lang => {
+                    const langItem = document.createElement('li');
+                    langItem.textContent = lang;
+                    langList.appendChild(langItem);
+                });
+                languages.appendChild(langList);
+            })
+            .catch(error => console.error('Error loading JSON:', error));
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+{
+    "Work Experience": [
+      {
+        "Company": "Siemens s.r.o.",
+        "Position": "Expert",
+        "Duration": "Oct 2020 - current",
+        "Responsibilities": [
+          "Coordinate EDI (Electronical Data Interchange) data collection with external suppliers",
+          "Establish and validate data flow and data quality to the system",
+          "Create quality reporting to evaluate and improve existing data flows",
+          "Design data warehouse (DWH) – Migration from SAP transaction DB to Logistics (LS) data warehouse snowflake with help of the LS team",
+          "Collaboration with many experts across the LS team",
+          "Administrate DWH Snowflake – grant permissions, rights to new users, new accounts",
+          "Check data consistency – validate and evaluate data in database coming to DWH",
+          "Suggest Indexes to improve performance and issues of ETL",
+          "Define delta loads in base tables",
+          "BI analyst – develop and deliver BI dashboards based on requirements from stakeholders",
+          "Transform data in a SQL view or procedure then create Power BI and Dundas BI dashboard",
+          "Scrum management – JIRA agile project management",
+          "Cooperate with team of 4 people to maintain, improve, extend, and administrate front and back-end of the LS DWH",
+          "DevOps continuous development of project",
+          "Automation of simple tasks – support LS team with any possible solution to help automate repetitive tasks",
+          "Use of Excel VBA, Power Query, UI Path automation cloud, Python scripting",
+          "Trainer of IT topics, skills, landscape – UI Path introduction to UI automation, variables, flows, sequences, arguments in a class of 8 people"
+        ]
+      },
+      {
+        "Company": "Honeywell spol. s.r.o.",
+        "Position": "Supply Chain Specialist",
+        "Duration": "Jan 2020 – Aug 2020",
+        "Responsibilities": [
+          "Optimize stock of goods with SAP and database to keep at optimal level",
+          "Change optimal quantities if required",
+          "Place order for materials low on stocks",
+          "Ensure materials delivery on time to customers (Lufthansa, British Airways)",
+          "Coordinate with warehouse shipping time",
+          "Root cause analysis on exceptions and providing solutions"
+        ]
+      }
+    ],
+    "Certifications": [
+      "PBID-20230100734 Power BI developer – GoPass",
+      "GOC663-20220100119 SQL in MySQL environment – GoPass",
+      "GOC660-20220100371 Advanced SQL in MySQL environment – GoPass",
+      "PYTHON_INTRO-20230100384 Python essentials – GoPass"
+    ],
+    "Skills": {
+      "Software Skills": [
+        "Oracle/MySQL SQL/DML/DDL",
+        "MS Office",
+        "Power Query",
+        "Power BI",
+        "UI Path",
+        "Snowflake (Python)",
+        "JIRA"
+      ],
+      "Soft Skills": [
+        "Communication",
+        "Negotiation",
+        "Creativity",
+        "Problem-solving",
+        "Teamwork",
+        "Decision-making"
+      ]
+    },
+    "Languages": [
+      "Czech (native)",
+      "English (professional)",
+      "German (communicative)"
+    ]
+  }
+  
