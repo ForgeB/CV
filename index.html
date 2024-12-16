@@ -75,8 +75,11 @@
                 .then(data => {
                     // Work Experiences
                     const workExperience = document.getElementById('work-experience-content');
+                    let counter = 1; // Initialize a counter
+                    
                     data['Work Experience'].forEach(job => {
                         const jobDiv = document.createElement('div');
+                        jobDiv.id = `job-experience-${counter}`; // Assign a unique ID using the counter
                         jobDiv.innerHTML = `
                             <h3>${job.Company}</h3>
                             <p>${job.Position}</p>
@@ -86,8 +89,8 @@
                             </ul>
                         `;
                         workExperience.appendChild(jobDiv);
+                        counter++; // Increment the counter
                     });
-    
                     // Certifications
                     const certifications = document.getElementById('certifications-content');
                     const certList = document.createElement('ul');
