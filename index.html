@@ -129,29 +129,35 @@
                     languages.appendChild(langList);
                 })
                 .catch(error => console.error('Error loading JSON:', error));
-function generatePDF() {
-    console.log('Function generatePDF called'); // Log to verify function call
-    var pdf_data = document.getElementById('CV_data'); // Target the container
-    console.log('pdf_data:', pdf_data); // Log the element being converted
+        function generatePDF() {
+            console.log('Function generatePDF called'); // Log to verify function call
+            var pdf_data = document.getElementById('content'); // Target the container
+            if (!pdf_data) {
+                console.error('Element #content not found');
+                return;
+            }
+            console.log('pdf_data:', pdf_data); // Log the element being converted
 
-    // Config pdf
-    var opt = {
-        filename: 'Tomas_Vlachopulos_CV.pdf',
-        pagebreak: { mode: ['avoid-all'] }, // Avoid page breaks
-        jsPDF: { unit: 'pt', format: 'a4', orientation: 'portrait' },
-        html2canvas: { scale: 2, scrollX: 0, scrollY: 0 }
-    };
+            // Config pdf
+            var opt = {
+                filename: 'Tomas_Vlachopulos_CV.pdf',
+                pagebreak: { mode: ['avoid-all'] }, // Avoid page breaks
+                jsPDF: { unit: 'pt', format: 'a4', orientation: 'portrait' },
+                html2canvas: { scale: 2, scrollX: 0, scrollY: 0 }
+            };
 
-    // Creates pdf
-    html2pdf().set(opt).from(pdf_data).toPdf().get('pdf').then(function(pdf) {
-        console.log('PDF generated'); // Log to verify PDF generation
-        var totalPages = pdf.internal.pages.length; // Calculate dimensions based on content
-        pdf.deletePage(totalPages); // Remove last blank page
-        pdf.output('dataurlnewwindow'); // Open in new browser window
-    }).catch(function(error) {
-        console.error('Error generating PDF: ', error); // Log any errors
-    });
-}
+            // Creates pdf
+            html2pdf().set(opt).from(pdf_data).toPdf().get('pdf').then(function(pdf) {
+                console.log('PDF generated'); // Log to verify PDF generation
+
+                // Create a blob URL to open in new window
+                var blob = pdf.output('blob');
+                var url = URL.createObjectURL(blob);
+                window.open(url);
+            }).catch(function(error) {
+                console.error('Error generating PDF: ', error); // Log any errors
+            });
+        }
         </script>
     </body>
 </html>
