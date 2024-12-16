@@ -130,22 +130,22 @@
                     languages.appendChild(langList);
                 })
                 .catch(error => console.error('Error loading JSON:', error));
-    function generatePDF() {
-        var pdf_data = document.body;
-        // Config pdf
-        var opt = {
-            filename: 'Tomas_Vlachopulos_CV.pdf',
-            pagebreak: { mode: ['avoid-all'] }, // Avoid page breaks
-            jsPDF: { unit: 'pt', format: 'a4', orientation: 'portrait' },
-            html2canvas: { scale: 2, scrollX: 0, scrollY: 0 }
-        };
-        // Creates pdf
-        html2pdf().set(opt).from(pdf_data).toPdf().get('pdf').then(function(pdf) {
-            var totalPages = pdf.internal.pages.length; // Calculate dimensions content based
-            pdf.deletePage(totalPages); // Remove last blank page
-            pdf.output('dataurlnewwindow'); // Open in browser new window
-        });
-    }
+    // function generatePDF() {
+    //     var pdf_data = document.body;
+    //     // Config pdf
+    //     var opt = {
+    //         filename: 'Tomas_Vlachopulos_CV.pdf',
+    //         pagebreak: { mode: ['avoid-all'] }, // Avoid page breaks
+    //         jsPDF: { unit: 'pt', format: 'a4', orientation: 'portrait' },
+    //         html2canvas: { scale: 2, scrollX: 0, scrollY: 0 }
+    //     };
+    //     // Creates pdf
+    //     html2pdf().set(opt).from(pdf_data).toPdf().get('pdf').then(function(pdf) {
+    //         var totalPages = pdf.internal.pages.length; // Calculate dimensions content based
+    //         pdf.deletePage(totalPages); // Remove last blank page
+    //         pdf.output('dataurlnewwindow'); // Open in browser new window
+    //     });
+    // }
     
     }
     
