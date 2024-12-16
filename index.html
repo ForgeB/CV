@@ -146,7 +146,8 @@
                 jsPDF: { unit: 'pt', format: 'a4', orientation: 'portrait' },
                 pagebreak: {
                     mode: ['css', 'legacy'], // Use CSS and legacy modes
-                    before: '#job-experience-1, #certifications', // Break before these sections
+                    before: '#certifications', // Break before these sections
+                    after: '#job-experience-1'
                 },
                 html2canvas: { scale: 2, scrollX: 0, scrollY: 0 }
             };
