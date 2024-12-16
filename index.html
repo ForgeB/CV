@@ -141,7 +141,11 @@
             var opt = {
                 filename: 'Tomas_Vlachopulos_CV.pdf',
                 jsPDF: { unit: 'pt', format: 'a4', orientation: 'portrait' },
-                pagebreak: { mode: ['avoid-all'] },
+                pagebreak: {
+                    mode: ['css', 'legacy'], // Use CSS and legacy modes
+                    before: '#work-experience, #certifications, #skills, #languages', // Break before these sections
+                    after: '.centered-content' // Break after this class 
+                },
                 html2canvas: { scale: 2, scrollX: 0, scrollY: 0 }
             };
 
