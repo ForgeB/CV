@@ -2,7 +2,7 @@
     "Work Experience": [
       {
         "Company": "Siemens s.r.o.",
-        "Position": "Expert",
+        "Position": "Expert1",
         "Duration": "Oct 2020 - current",
         "Responsibilities": [
           "Coordinate EDI (Electronical Data Interchange) data collection with external suppliers",
@@ -46,7 +46,10 @@
     ],
     "Skills": {
       "Software Skills": [
-        "Oracle/MySQL SQL/DML/DDL",
+        "DBMS: Oracle SQL Developer, MySQL, Postgre SQL, Snowflake, DBeaver",
+        "SQL, DML, DDL, PL-SQL",
+        "Python scripting",
+        "JavaSript scpriting",
         "MS Office",
         "Power Query",
         "Power BI",
@@ -59,9 +62,8 @@
         "Negotiation",
         "Creativity",
         "Problem-solving",
-        "Teamwork",
-        "Decision-making",
-        "JavaScript"
+        "Teamworking",
+        "Decision-making"
       ]
     },
     "Languages": [
