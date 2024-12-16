@@ -6,13 +6,13 @@
     <title>CV - Ing. Tomas Vlachopulos</title>
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #000;
-            background-color: #fff;
-            width: 21cm;
-            min-height: 29.7cm;
+            font-family: 'Segoe UI', 'sans-serif';
+            color: black;
+            background-color: white;
+            width: 20cm;
+            min-height: 30cm;
             margin: 2cm auto;
-            border: 1px solid #000;
+            border: 1.2px solid black;
             padding: 2cm;
             box-sizing: border-box;
             position: relative;
@@ -20,6 +20,23 @@
         .centered-content {
             text-align: center;
             margin-bottom: 2cm;
+        }
+        .pdf-button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            background-color: dodgerblue;
+            border:none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        .pdf-button:hover {
+            background-color: #005ea6;
         }
     </style>
 </head>
@@ -49,7 +66,80 @@
     <h2 id="languages">Languages:</h2>
     <div id="languages-content"></div>
 
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
     <script>
+        function generatePDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            const marginLeft = 10;
+            let currentHeight = 10;
+            // Adding content dynamically from the webpage
+            doc.setFontSize(22);
+            doc.text(marginLeft, currentHeight, document.querySelector('h1').textContent);
+            currentHeight += 10;
+
+            doc.setFontSize(12);
+            document.querySelectorAll('.centered-content p').forEach(p => {
+                doc.text(marginLeft, currentHeight, p.textContent);
+                currentHeight += 10;
+            });
+            // Add Education
+            currentHeight += 10;
+            doc.setFontSize(16);
+            doc.text(marginLeft, currentHeight, 'Education:');
+            currentHeight += 10;
+            document.querySelectorAll('ul li').forEach(li => {
+                doc.text(marginLeft, currentHeight, li.textContent);
+                currentHeight += 10;
+            });
+            // Add Work Experience
+            currentHeight += 10;
+            doc.setFontSize(16);
+            doc.text(marginLeft, currentHeight, 'Work Experience:');
+            currentHeight += 10;
+            document.querySelectorAll('#work-experience-content div').forEach(div => {
+                doc.setFontSize(14);
+                div.querySelectorAll('h3, p, ul li').forEach(el => {
+                    doc.text(marginLeft, currentHeight, el.textContent);
+                    currentHeight += 10;
+                });
+                currentHeight += 10;
+            });
+            // Add Certifications
+            currentHeight += 10;
+            doc.setFontSize(16);
+            doc.text(marginLeft, currentHeight, 'Certifications:');
+            currentHeight += 10;
+            document.querySelectorAll('#certifications-content ul li').forEach(li => {
+                doc.text(marginLeft, currentHeight, li.textContent);
+                currentHeight += 10;
+            });
+            // Add Skills
+            currentHeight += 10;
+            doc.setFontSize(16);
+            doc.text(marginLeft, currentHeight, 'Skills:');
+            currentHeight += 10;
+            document.querySelectorAll('#skills-content div').forEach(div => {
+                doc.setFontSize(14);
+                div.querySelectorAll('h3, ul li').forEach(el => {
+                    doc.text(marginLeft, currentHeight, el.textContent);
+                    currentHeight += 10;
+                });
+                currentHeight += 10;
+            });
+            // Add Languages
+            currentHeight += 10;
+            doc.setFontSize(16);
+            doc.text(marginLeft, currentHeight, 'Languages:');
+            currentHeight += 10;
+            document.querySelectorAll('#languages-content ul li').forEach(li => {
+                doc.text(marginLeft, currentHeight, li.textContent);
+                currentHeight += 10;
+            });
+            // Save the PDF
+            doc.save("CV_Tomas_Vlachopulos.pdf");
+            
         fetch('Job_dataset_Siemens.json')
             .then(response => response.json())
             .then(data => {
