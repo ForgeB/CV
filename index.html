@@ -43,6 +43,7 @@
 </head>
     <button class="pdf-button" onclick="generatePDF()">Generate PDF</button>
 <body>
+    <div id="CV_data">
         <div class="centered-content">
             <h1>Ing. Tomas Vlachopulos</h1>
             <p>Supportive data analyst inside international team delivering impactful solutions for data warehousing.</p>
@@ -67,7 +68,7 @@
     
         <h2 id="languages">Languages:</h2>
         <div id="languages-content"></div>
-
+    </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
         <script>
             fetch('Job_dataset_Siemens.json')
@@ -130,7 +131,7 @@
                 .catch(error => console.error('Error loading JSON:', error));
 function generatePDF() {
     console.log('Function generatePDF called'); // Log to verify function call
-    var pdf_data = document.getElementById('content'); // Target the container
+    var pdf_data = document.getElementById('CV_data'); // Target the container
     console.log('pdf_data:', pdf_data); // Log the element being converted
 
     // Config pdf
