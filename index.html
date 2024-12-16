@@ -131,7 +131,7 @@
                 .catch(error => console.error('Error loading JSON:', error));
         function generatePDF() {
             console.log('Function generatePDF called'); // Log to verify function call
-            var pdf_data = document.getElementById('content'); // Target the container
+            var pdf_data = document.getElementById('CV_data'); // Target the container
             if (!pdf_data) {
                 console.error('Element #content not found');
                 return;
