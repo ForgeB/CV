@@ -1,36 +1,31 @@
-name: Generate README
-
+name: Update README
 on:
   push:
+    paths:
+      - 'Job_dataset_Siemens.json'
     branches:
-      - main  # Change this to your default branch if necessary
+      - main
 
 jobs:
-  build:
+  update-readme:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-      with:
-        persist-credentials: false
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-    - name: Setup Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '14'  # Specify the Node.js version you want to use
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
 
-    - name: Install dependencies
-      run: npm install
+      - name: Install dependencies
+        run: npm install
 
-    - name: Run UpdateReadme script
-      run: node UpdateReadme.js
+      - name: Run UpdateReadme.js
+        run: node UpdateReadme.js
 
-    - name: Commit and push changes
-      uses: ad-m/github-push-action@master
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        branch: ${{ github.ref }}
-      permissions:
-        contents: write
-        pull_requests: write
+      - name: Commit and push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main
