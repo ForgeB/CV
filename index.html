@@ -31,7 +31,7 @@
             border-radius: 10px;
             cursor: pointer;
             text-align: center;
-            transition: background-color 5s ease;
+            transition: background-color 3s ease;
             position: absolute; /* Positioning property */
             top: 10px; /* Distance from the top of the page */
             right: 10px; /* Distance from the right of the page */
@@ -131,8 +131,7 @@
                 })
                 .catch(error => console.error('Error loading JSON:', error));
     function generatePDF() {
-    function generatePDF() {
-        var element = document.getElementById('cv_data');
+        var pdf_data = document.getElementById('cv_data');
         // Config pdf
         var opt = {
             filename: 'Tomas_Vlachopulos_CV.pdf',
@@ -141,7 +140,7 @@
             html2canvas: { scale: 2, scrollX: 0, scrollY: 0 }
         };
         // Creates pdf
-        html2pdf().set(opt).from(element).toPdf().get('pdf').then(function(pdf) {
+        html2pdf().set(opt).from(pdf_data).toPdf().get('pdf').then(function(pdf) {
             var totalPages = pdf.internal.pages.length; // Calculate dimensions content based
             pdf.deletePage(totalPages); // Remove last blank page
             pdf.output('dataurlnewwindow'); // Open in browser new window
