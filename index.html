@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV - Ing. Tomas Vlachopulos</title>
+    <title>CV - Tomas Vlachopulos</title>
     <style>
         body {
             font-family: 'Segoe UI', 'sans-serif';
@@ -128,25 +128,30 @@
                     languages.appendChild(langList);
                 })
                 .catch(error => console.error('Error loading JSON:', error));
-        function generatePDF() {
-            var pdf_data = document.getElementById('content'); // Target the container
+function generatePDF() {
+    console.log('Function generatePDF called'); // Log to verify function call
+    var pdf_data = document.getElementById('content'); // Target the container
+    console.log('pdf_data:', pdf_data); // Log the element being converted
 
-            // Config pdf
-            var opt = {
-                filename: 'Tomas_Vlachopulos_CV.pdf',
-                pagebreak: { mode: ['avoid-all'] }, // Avoid page breaks
-                jsPDF: { unit: 'pt', format: 'a4', orientation: 'portrait' },
-                html2canvas: { scale: 2, scrollX: 0, scrollY: 0 }
-            };
+    // Config pdf
+    var opt = {
+        filename: 'Tomas_Vlachopulos_CV.pdf',
+        pagebreak: { mode: ['avoid-all'] }, // Avoid page breaks
+        jsPDF: { unit: 'pt', format: 'a4', orientation: 'portrait' },
+        html2canvas: { scale: 2, scrollX: 0, scrollY: 0 }
+    };
 
-            // Creates pdf
-            html2pdf().set(opt).from(pdf_data).toPdf().get('pdf').then(function(pdf) {
-                var totalPages = pdf.internal.pages.length; // Calculate dimensions based on content
-                pdf.deletePage(totalPages); // Remove last blank page
-                pdf.output('dataurlnewwindow'); // Open in new browser window
-            }).catch(function(error) {
-                console.error('Error generating PDF: ', error);
-            });
+    // Creates pdf
+    html2pdf().set(opt).from(pdf_data).toPdf().get('pdf').then(function(pdf) {
+        console.log('PDF generated'); // Log to verify PDF generation
+        var totalPages = pdf.internal.pages.length; // Calculate dimensions based on content
+        pdf.deletePage(totalPages); // Remove last blank page
+        pdf.output('dataurlnewwindow'); // Open in new browser window
+    }).catch(function(error) {
+        console.error('Error generating PDF: ', error); // Log any errors
+    });
+}
+
         }
         </script>
     </body>
