@@ -1,39 +1,44 @@
-name: Update README
 
-on:
-  push:
-    paths:
-      - 'Job_dataset.json'
-    branches:
-      - main
+          name: Update README
 
-jobs:
-  update-readme:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '14'
+          on:
+            push:
+              paths:
+                - 'Job_dataset.json'
+              branches:
+                - main
           
-      - name: Install project dependencies
-        run: npm install
-        
-      - name: Install dependencies
-        run: npm install jsonfile
-        
-      - name: Run UpdateReadme.js
-        run: node UpdateReadme.js
+          jobs:
+            update-readme:
+              runs-on: ubuntu-latest
+              permissions:
+                contents: write
+              steps:
+                - name: Checkout repository
+                  uses: actions/checkout@v2
+          
+                - name: Setup Node.js
+                  uses: actions/setup-node@v2
+                  with:
+                    node-version: '14'
 
-      - name: Commit and push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: main
+                - name: Install project dependencies
+                  run: npm install          
+
+                - name: Install dependencies
+                  run: npm install jsonfile
+          
+                - name: Run UpdateReadme.js
+                  run: node UpdateReadme.js
+          
+                - name: Commit and push changes
+                  uses: actions/github-script@v4
+                  with:
+                    script: |
+                      const { execSync } = require('child_process');
+                      execSync('git config --global user.name "github-actions[bot]"');
+                      execSync('git config --global user.email "github-actions[bot]@users.noreply.github.com"');
+                      execSync('git add README.md');
+                      execSync('git commit -m "Update README based on Job_dataset.json"');
+                      execSync('git push');
+          
