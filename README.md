@@ -107,13 +107,12 @@ All Bike fans feel free to check it out - #BikeForge.
 ## Contact
 
 - **Location:** Prague 4
-- **Phone:** [+420 736707496](tel:+420736707496)
-- **Email:** [tom1en@seznam.cz](mailto:tom1en@seznam.cz) | [mr.tomas.vlachopulos@gmail.com](mailto:mr.tomas.vlachopulos@gmail.com)
-- **LinkedIn:** [Tomas Vlachopulos](https://www.linkedin.com/in/tomas-vlachopulos/)
+- **Email:** [tom1en@seznam.cz](mailto:tom1en@seznam.cz)
+- **LinkedIn:** <a href="https://www.linkedin.com/in/tomas-vlachopulos/" target="_blank">Tomas Vlachopulos</a>
 
 ## Usage
 
-To view the CV, simply visit the GitHub Pages URL: [https://forgeb.github.io/CV/](https://forgeb.github.io/CV/)
+To view the CV, simply visit the GitHub Pages URL: <a href="https://forgeb.github.io/CV/" target="_blank">https://forgeb.github.io/CV/</a>
 
 ## Contributing
 
