@@ -2,7 +2,7 @@ name: Update README
 on:
   push:
     paths:
-      - 'Job_dataset_Siemens.json'
+      - 'Job_dataset.json'
     branches:
       - main
 
