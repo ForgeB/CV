@@ -10,6 +10,8 @@ on:
 jobs:
   update-readme:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -20,13 +22,13 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '14'
-
-      - name: Install dependencies
-        run: npm install jsonfile
-
+          
       - name: Install project dependencies
         run: npm install
-
+        
+      - name: Install dependencies
+        run: npm install jsonfile
+        
       - name: Run UpdateReadme.js
         run: node UpdateReadme.js
 
