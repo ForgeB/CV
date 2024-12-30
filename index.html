@@ -3,162 +3,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zubní Ordinace Olomouc</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>CV - Tomas Vlachopulos</title>
     <style>
         body {
-            background-color: #3b3737; /* body background */
-            color: #d3d3d3; /* Light grey */
+            font-family: 'Segoe UI', 'sans-serif';
+            color: black;
+            background-color: white;
+            width: 20cm;
+            min-height: 30cm;
+            margin: 2cm auto;
+            border: 1.2px solid black;
+            box-sizing: border-box;
+            position: relative;
         }
-        .navbar-light .navbar-brand,
-        .navbar-light .nav-link {
-            color: #ffffff !important; /* White text for navbar links */
+        .centered-content {
+            text-align: center;
+            margin-bottom: 1cm;
         }
-        .navbar-light .nav-span {
-            color: #ffffff !important; /* White text for navbar links */
+        .pdf-button {
+            display: inline-block;
+            padding: 10px 25px;
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+            background-color: dodgerblue;
+            border-radius: 10px;
+            cursor: pointer;
+            text-align: center;
+            transition: background-color 3s ease;
+            position: absolute; /* Positioning property */
+            top: 10px; /* Distance from the top of the page */
+            right: 10px; /* Distance from the right of the page */
         }
-        .navbar-light .navbar-toggler {
-            color: rgba(255, 255, 255, 0.5); /* Hoover the button blender */
-        }
-        .bg-light {
-            background-color: #4b0082 !important; /* navigation bar - top */
-        }
-        .container {
-            background-color: #2e282e; /* Grey */
-            padding: 20px;
-            border-radius: 8px;
-        }
-        h1 {
-            color: #7950ca; /* Light purple */
-        }
-        .btn-primary {
-            background-color: #3c0663; /* Dark purple */
-            border-color: #4b0082; /* Dark purple */
-        }
-        .btn-primary:hover {
-            background-color: #6f22a7; /* Lighter purple */
-            border-color: #801fc5; /* Lighter purple */
-        }
-        .img-fluid {
-            max-width: 100%;
-            height: auto;
-        }
-        .m-2 {
-            margin: 0.5rem !important;
+        .pdf-button:hover {
+            background-color: black;
         }
     </style>
 </head>
+    <button class="pdf-button" onclick="generatePDF()">Generate PDF</button>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Zubní Ordinace</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#uvod">Úvod<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#zazemi">Zázemí</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#ordinacni-hodiny">Ordinační hodiny</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#kontakty">Kontakty</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#kde-nas-najdete">Kde nás najdete</a>
-                </li>
-              </ul>
+    <div id="CV_data" style="padding: 2cm">
+        <div class="centered-content">
+            <h1>Ing. Tomas Vlachopulos</h1>
+            <p>Supportive data analyst inside international team delivering impactful solutions for data warehousing.</p>
+            <p>Prague 4 | <a href="tel:+420736707496">+420 736707496</a> | <a href="mailto:mr.tomas.vlachopulos@gmail.com">mr.tomas.vlachopulos@gmail.com</a> | <a href="https://www.linkedin.com/in/tomas-vlachopulos/" target="_blank">LinkedIn</a></p>
         </div>
-    </nav>
-
-    <div class="container mt-5" id="uvod">
-        <h1>Vétejte v Zubní ordinaci Olomouc</h1>
-        <p id="uvod-description"></p>
-        <a class="btn btn-primary" href="#">Objednat se</a>
-    </div>
+        <h2>Education:</h2>
+        <ul>
+            <li>VSB-Technical University Ostrava (2013-2019) - Master of material engineering</li>
+            <li>Shenyang Aerospace University China (2018-2019) - Aeronautical engineering</li>
+            <li>Dongguk University Korea (2016-2017) - Material science and engineering</li>
+        </ul>
+        
+        <h2 id="work-experience">Work Experience:</h2>
+        <div id="work-experience-content"></div>
     
-    <div class="container mt-5" id="zazemi">
-        <h2>Zázemí</h2>
-        <p id="zazemi-description"></p>
-    </div>
+        <h2 id="certifications">Certifications:</h2>
+        <div id="certifications-content"></div>
     
-    <div class="container mt-5" id="ordinacni-hodiny">
-        <h2>Ordinační hodiny</h2>
-        <p id="ordinacni-hodiny-description"></p>
-    </div>
+        <h2 id="skills">Skills:</h2>
+        <div id="skills-content"></div>
     
-    <div class="container mt-5" id="kontakty">
-        <h2>Kontakty</h2>
-        <p id="kontakty-description"></p>
+        <h2 id="languages">Languages:</h2>
+        <div id="languages-content"></div>
     </div>
-
-    <div class="container mt-5" id="moznost-platby">
-        <h2>Možnosti platby</h2>
-        <p id="moznost-platby-description"></p>
-    </div>
-
-    <div class="container mt-5" id="smluvni-pojistovny">
-        <h2>Smluvní pojišťovny</h2>
-        <p id="smluvni-pojistovny-description"></p>
-        <div id="smluvni-pojistovny-link"></div>
-    </div>
-
-    <div class="container mt-5" id="kde-nas-najdete">
-        <h2>Kde nás najdete</h2>
-        <p>Stálá adresa ordinace:</p>
-        <p>Hanáckého pluku 1153/6</p>
-        <p>779 00</p>
-        <p>Olomouc</p>
-        <p>Najděte cestu k nám na mapě Google:</p>
-        <div class="embed-responsive embed-responsive-16by9">
-            <a href="https://www.google.com/maps/place/Hanáckého+pluku+1153,+779+00+Olomouc,+Czechia" target="_blank">
-                <img class="embed-responsive-item" src="https://maps.googleapis.com/maps/api/staticmap?center=Hanáckého%20pluku%201153,%20779%2000%20Olomouc%209&zoom=15&size=600x300&maptype=roadmap&markers=color:red%7Clabel:C%7C49.5955,17.2515&key=AIzaSyBy6BcsSbjG9shzSC81OdtPnCn9IikBfug" alt="Map of our location">
-            </a>
-        </div>
-    </div>
-
-    <footer class="text-center mt-5">
-        <p>&copy; 2025 Zubní Ordinace Olomouc. Všchnz práva vzhrazena.</p>
-    </footer>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            fetch('01_assets/data/informace.json')
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+        <script>
+            fetch('Job_dataset.json')
                 .then(response => response.json())
                 .then(data => {
-                    document.getElementById('uvod-description').innerText = data.uvod.description;
-                    document.getElementById('zazemi-description').innerText = data.zazemi.description;
-                    document.getElementById('moznost-platby-description').innerText = data.moznostPlatby.description;
-                    document.getElementById('smluvni-pojistovny-description').innerText = data.smluvniPojistovny.description;
-
-                    const ordinacnihodinycontainer = document.getElementById('ordinacni-hodiny-description');
-                    data.ordinacniHodiny.description.forEach(den => {
-                        const dentydnu = document.createElement('li');
-                        dentydnu.textContent = den;
-                        langList.appendChild(dentydnu);
+                    // Work Experiences
+                    const workExperience = document.getElementById('work-experience-content');
+                    let counter = 1; // Initialize a counter
+                    data['Work Experience'].forEach(job => {
+                        const jobDiv = document.createElement('div');
+                        jobDiv.id = `job-experience-${counter}`; // Assign a unique ID using the counter
+                        jobDiv.innerHTML = `
+                            <h3>${job.Company}</h3>
+                            <p>${job.Position}</p>
+                            <p>${job.Duration}</p>
+                            <ul>
+                                ${job.Responsibilities.map(res => `<li>${res}</li>`).join('')}
+                            </ul>
+                        `;
+                        workExperience.appendChild(jobDiv);
+                        counter++; // Increment the counter
+                    });
+                    // Certifications
+                    const certifications = document.getElementById('certifications-content');
+                    const certList = document.createElement('ul');
+                    data.Certifications.forEach(cert => {
+                        const certItem = document.createElement('li');
+                        certItem.textContent = cert;
+                        certList.appendChild(certItem);
+                    });
+                    certifications.appendChild(certList);
+                    // Skills
+                    const skills = document.getElementById('skills-content');
+                    const softwareSkills = document.createElement('div');
+                    softwareSkills.innerHTML = `
+                        <h3>Software Skills:</h3>
+                        <ul>
+                            ${data.Skills['Software Skills'].map(skill => `<li>${skill}</li>`).join('')}
+                        </ul>
+                    `;
+                    const softSkills = document.createElement('div');
+                    softSkills.innerHTML = `
+                        <h3>Soft Skills:</h3>
+                        <ul>
+                            ${data.Skills['Soft Skills'].map(skill => `<li>${skill}</li>`).join('')}
+                        </ul>
+                    `;
+                    skills.appendChild(softwareSkills);
+                    skills.appendChild(softSkills);
+                    // Languages
+                    const languages = document.getElementById('languages-content');
+                    const langList = document.createElement('ul');
+                    data.Languages.forEach(lang => {
+                        const langItem = document.createElement('li');
+                        langItem.textContent = lang;
+                        langList.appendChild(langItem);
                     });
                     languages.appendChild(langList);
-
-                    const smluvniPojistovnyContainer = document.getElementById('smluvni-pojistovny-link');
-                    data.smluvniPojistovny.images.forEach(imagePath => {
-                        const img = document.createElement('img');
-                        img.src = imagePath;
-                        img.alt = "Smluvní pojišťovna";
-                        img.classList.add('img-fluid', 'm-2'); // Add Bootstrap classes for styling
-                        smluvniPojistovnyContainer.appendChild(img);
-                    });
                 })
-                .catch(error => console.error('Error fetching the JSON data:', error));
-        });
-    </script>
-    
-</body>
+                .catch(error => console.error('Error loading JSON:', error));
+        function generatePDF() {
+            console.log('Function generatePDF called'); // Log to verify function call
+            var pdf_data = document.getElementById('CV_data'); // Target the container
+            if (!pdf_data) {
+                console.error('Element #content not found');
+                return;
+            }
+            // Config pdf
+            var opt = {
+                filename: 'Tomas_Vlachopulos_CV.pdf',
+                jsPDF: { unit: 'pt', format: 'a4', orientation: 'portrait' },
+                pagebreak: {
+                    mode: ['css', 'legacy'],
+                    after: '#job-experience-1'
+                },
+                html2canvas: { scale: 2, scrollX: 0, scrollY: 0 }
+            };
+            // Creates pdf
+            html2pdf().set(opt).from(pdf_data).toPdf().get('pdf').then(function(pdf) {
+                console.log('PDF generated'); // Log to verify PDF generation
+                // Create a blob URL to open in new window
+                var blob = pdf.output('blob');
+                var url = URL.createObjectURL(blob);
+                window.open(url);
+            }).catch(function(error) {
+                console.error('Error generating PDF: ', error); // Log any errors
+            });
+        }
+        </script>
+    </body>
 </html>
