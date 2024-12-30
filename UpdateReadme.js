@@ -88,7 +88,7 @@ All Bike fans feel free to check it out - #BikeForge.
 ## Contact
 
 - **Location:** Prague 4
-- **Email:** [tom1en@seznam.cz](mailto:tom1en@seznam.cz)
+- **Email:** [mr.tomas.vlachopulos@gmail.com](mailto:mr.tomas.vlachopulos@gmail.com)
 - **LinkedIn:** <a href="https://www.linkedin.com/in/tomas-vlachopulos/" target="_blank">Tomas Vlachopulos</a>
 
 ## Usage
