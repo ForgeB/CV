@@ -46,15 +46,18 @@
     ],
     "Skills": {
       "Software Skills": [
-        "DBMS: Oracle SQL Developer, MySQL, Postgre SQL, Snowflake, DBeaver",
-        "SQL: DML, DDL, PL-SQL",
-        "Python scripting",
-        "JavaSript scpriting",
+        "Oracle SQL Developer",
+        "MySQL",
+        "Postgre SQL",
+        "DBeaver",
+        "Snowflake",
+        "SQL",
+        "Python",
+        "JavaSript",
         "MS Office",
         "Power Query",
         "Power BI",
         "UI Path",
-        "Snowflake (Python)",
         "JIRA"
       ],
       "Soft Skills": [
