@@ -79,15 +79,18 @@ All Bike fans feel free to check it out - #BikeForge.
 ## Skills
 
 ### Software Skills
-- DBMS: Oracle SQL Developer, MySQL, Postgre SQL, Snowflake, DBeaver
-- SQL: DML, DDL, PL-SQL
-- Python scripting
-- JavaSript scpriting
+- Oracle SQL Developer
+- MySQL
+- Postgre SQL
+- DBeaver
+- Snowflake
+- SQL
+- Python
+- JavaSript
 - MS Office
 - Power Query
 - Power BI
 - UI Path
-- Snowflake (Python)
 - JIRA
 
 ### Soft Skills
@@ -107,7 +110,7 @@ All Bike fans feel free to check it out - #BikeForge.
 ## Contact
 
 - **Location:** Prague 4
-- **Email:** [tom1en@seznam.cz](mailto:tom1en@seznam.cz)
+- **Email:** [mr.tomas.vlachopulos@gmail.com](mailto:mr.tomas.vlachopulos@gmail.com)
 - **LinkedIn:** <a href="https://www.linkedin.com/in/tomas-vlachopulos/" target="_blank">Tomas Vlachopulos</a>
 
 ## Usage
