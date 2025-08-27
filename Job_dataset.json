@@ -31,7 +31,7 @@
         "Responsibilities": [
             "Data warehouse procedures development – Develop new procedures for new data feeds. Prepare data for outbound processing in ETL tools",
             "Data integration automation – Develop workflows in GoAnywhereMFT ETL tool to deliver quality data. Maintain and update existing workflows based on business requirements. Ensure correct encryption and data security on SFTP. Create and maintain schedules for automated data delivery",
-            "Documentation and process mapping – Map and document existing processes within the team, document all ETL workflows, and create data model mappings for data sources used",
+            "Documentation and process mapping – Map and document existing processes within the team, document all ETL workflows, and create data model mappings for data sources used"
         ]
       }
     ],
@@ -48,7 +48,7 @@
         "Programming – Python, SQL, JavaScript",
         "Analytics & BI – Power BI, Power Query, MS Excel",
         "Automation – UI Path, Go Anywhere, Dbt, AWS services",
-        "Project Management – JIRA, Confluence, Lucidchart",
+        "Project Management – JIRA, Confluence, Lucidchart"
       ],
       "Soft Skills": [
         "Communication",
@@ -65,4 +65,5 @@
       "German (communicative)"
     ]
   }
+
 
