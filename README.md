@@ -35,7 +35,7 @@ All Bike fans feel free to check it out - #BikeForge.
 ### Siemens s.r.o.
 **Position:** Expert1
 
-**Duration:** Oct 2020 - current
+**Duration:** Oct 2020 - Apr 2025
 
 **Responsibilities:**
 - Coordinate EDI (Electronical Data Interchange) data collection with external suppliers.
@@ -56,18 +56,15 @@ All Bike fans feel free to check it out - #BikeForge.
 - Use of Excel VBA, Power Query, UI Path automation cloud, Python scripting.
 - Trainer of IT topics, skills, landscape – UI Path introduction to UI automation, variables, flows, sequences, arguments in a class of 8 people.
 
-### Honeywell spol. s.r.o.
-**Position:** Supply Chain Specialist
+### Accolade Technologies s.r.o.
+**Position:** Data integration III
 
-**Duration:** Jan 2020 – Aug 2020
+**Duration:** May 2025 – current
 
 **Responsibilities:**
-- Optimize stock of goods with SAP and database to keep at optimal level.
-- Change optimal quantities if required.
-- Place order for materials low on stocks.
-- Ensure materials delivery on time to customers (Lufthansa, British Airways).
-- Coordinate with warehouse shipping time.
-- Root cause analysis on exceptions and providing solutions.
+- Data warehouse procedures development – Develop new procedures for new data feeds. Prepare data for outbound processing in ETL tools
+- Data integration automation – Develop workflows in GoAnywhereMFT ETL tool to deliver quality data. Maintain and update existing workflows based on business requirements. Ensure correct encryption and data security on SFTP. Create and maintain schedules for automated data delivery
+- Documentation and process mapping – Map and document existing processes within the team, document all ETL workflows, and create data model mappings for data sources used
 
 ## Certifications
 
@@ -79,19 +76,12 @@ All Bike fans feel free to check it out - #BikeForge.
 ## Skills
 
 ### Software Skills
-- Oracle SQL Developer
-- MySQL
-- Postgre SQL
-- DBeaver
-- Snowflake
-- SQL
-- Python
-- JavaSript
-- MS Office
-- Power Query
-- Power BI
-- UI Path
-- JIRA
+- Databases (OLAP) – Snowflake, AWS Redshift
+- Databases (OLTP) – Oracle, PostgreSQL, MS SQL Server
+- Programming – Python, SQL, JavaScript
+- Analytics & BI – Power BI, Power Query, MS Excel
+- Automation – UI Path, Go Anywhere, Dbt, AWS services
+- Project Management – JIRA, Confluence, Lucidchart
 
 ### Soft Skills
 - Communication
